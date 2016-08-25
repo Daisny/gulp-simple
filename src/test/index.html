@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>易果</title>
+    <script>
+        (function(context){
+            var docEl = document.documentElement,
+                fontEl = document.createElement('style'),
+                metaEl = document.querySelector('meta[name="viewport"]'),
+                //docWidth = docEl.getBoundingClientRect().width,
+                docWidth = docEl.clientWidth,
+                dpr = window.devicePixelRatio || 1,
+                rem = docWidth * dpr / 10,
+                scale = 1 / dpr;
+
+            metaEl.setAttribute('content', 'width=' + dpr * docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale + ',user-scalable=no');
+            docEl.setAttribute('data-dpr', dpr);
+            docEl.firstElementChild.appendChild(fontEl);
+            fontEl.innerHTML = 'html{font-size:' + rem + 'px!important;}';
+
+            context.rem2px = function(v) {
+                v = parseFloat(v);
+                return v * rem;
+            };
+
+            context.px2rem=function(v) {
+                v = parseFloat(v);
+                return v / rem;
+            };
+
+            context.dpr = dpr;
+            context.rem = rem;
+        });
+
+        (function(win){
+            var rem = 75,
+                docEl = document.documentElement,
+                fontEl = document.createElement('style'),
+                metaEl = document.querySelector('meta[name="viewport"]'),
+                docWidth = docEl.getBoundingClientRect().width,
+                ratio = 1,
+                resize,
+                timer = null;
+
+            function refresh(){
+                docWidth = docEl.getBoundingClientRect().width;
+
+                ratio = docWidth / 750;
+
+                docEl.style.fontSize = rem * ratio + 'px';
+            }
+
+            refresh();
+
+            resize = window.onorientationchange ? 'orientationchange' : 'resize';
+
+            win.addEventListener(resize, function(){
+                if(timer){
+                    clearTimeout(timer);
+                }
+
+                timer = setTimeout(function(){
+                    refresh();
+                }, 100);
+            });
+
+        })(window);
+        
+
+
+
+    </script>
+    <link type="text/css" rel="stylesheet" href="//static.udache.com/gulfstream/webapp/css/didi.new.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+    var Omega = {
+        productName: 'yiguo', // 具体产品线使用Omega统计时必须设置此参数，不同产品线不能定义重复，所以此参数的分配统一由工具平台团队来管理。
+        debugMode: false, // 配置参数，默认值true
+        enableDebugMode: false
+    };
+    </script>
+    <script src="//webapp.didistatic.com/static/webapp/shield/z/omega/omega/0.1.6/omega.min.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c9a738fe0356938c9a4e6d8f98763798";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript" src="//static.udache.com/gulfstream/webapp/js/didi.js"></script>
+<!-- <script src='//webapp.didistatic.com/static/webapp/shield/z/login/login/0.1.6/login.min.js'></script> -->
+<script type="text/javascript" src="//passport.rdtest.didichuxing.com/static/common-login/build/0.1.0/login.test.js"></script>
+<!-- <script type="text/javascript" src="//static.udache.com/gulfstream/webapp/modules/resources/js/queryloader2.min.js
+"></script> -->
+<!-- <script type="text/javascript" src="//static.udache.com/gulfstream/webapp/js/didi.dbridge.new.js"></script> -->
+<script type="text/javascript" src="./js/index.js"></script>
+
+</html>

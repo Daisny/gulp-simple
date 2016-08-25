@@ -1,0 +1,117 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+em,
+img,
+input,
+q,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+canvas {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+input,
+textarea {
+    -webkit-appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+$vw: 750;
+$vh: 1206;
+$color: #6f5d4e;
+$color-light: #ffdbc4;
+html,
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: "HelveticaNeue-Light", "HelveticaNeue", "Helvetica", "PingFang SC", "STHeitiSC-Light", "Microsoft YaHei", "Arial", "sans-serif";
+    font-size: 16px;
+    color: $color;
+}
+
+html {
+    font-size: 75px;
+}
+
+body {
+    font-size: 16px;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+    font-size: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.text-light {
+    color: $color-light;
+}
+
+@function rem($px){
+    @return $px / 75 * 1rem;
+}
+
+/* html, body{
+    width: rem(750);
+} */
+
+.page{
+    width: 100%;
+}
+
+a{
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes aa{
+    0%{opacity: 1}
+}

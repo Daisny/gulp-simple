@@ -1,2 +1,1 @@
-# gulp-simple
-gulp-simple demo
+gulp-simple for h5
