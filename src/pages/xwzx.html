@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>顺鑫绿洲</title>
+    <link rel="stylesheet" href="../lib/swiper3.1.0.min.css">
+    <link rel="stylesheet" href="../css/xwzx.css">
+</head>
+
+<body>
+    <div class="top-header clearfix">
+        <div class="w">
+            <a href="/">
+                <span class="logo"></span>
+                <span class="logo-name">顺鑫绿洲</span>
+            </a>
+
+            <ul class="top-navs">
+                <li class="nav-item active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./xwzx.html">新闻中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./project">工程案例</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./sjfw.html">设计服务</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./whzx.html">文化中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./文化中心.html">人才中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w">
+        <div class="sub-banner">
+            <img src="../image/subbanner2.png" alt="" class="media">
+            <div class="banner-desc">
+                <span class="icon"></span>
+                <span class="name">新闻中心</span>
+            </div>
+            <div class="text-mask"></div>
+        </div>
+        <div class="news">
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+            <div class="news-item">
+                <div class="name">新闻标题</div>
+                <p class="meta">2017年1月18日</p>
+                <p class="content">2017年2月22日下午在国门一号，我公司举行了首次综合应急演练，演练科目包括疏散逃生、触电高空坠落、灭火器的使用等，通过演习，提高了职工安全意识，巩固安全技能提升了整个公司的组织组织组织组织配合...</p>
+            </div>
+        </div>
+        <div class="pagination align-center"></div>
+    </div>
+
+    <div class="common-foot align-center">
+        <p class="copy-info">Copyright 2014 顺鑫绿洲 All Rights Reserved  京ICP备12040664号 京公网安备110113000279号</p>
+    </div>
+</body>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/swiper3.1.0.min.js"></script>
+<script src="../lib/jquery.pagination.js"></script>
+<script>
+    (function(){
+        function onPageChange(i){
+            console.log(i)
+
+            return false
+        }
+
+        $('.pagination').pagination(1000, {
+            prev_text: '上一页',
+            next_text: '下一页',
+            callback: onPageChange/*,
+            link_to: '?page=__id__'*/,
+            items_per_page: 6,
+            num_display_entries: 5,
+            num_edge_entries: 2
+        })
+    })();
+
+</script>
+</html>

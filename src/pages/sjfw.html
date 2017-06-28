@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>工程案例</title>
+    <link rel="stylesheet" href="../lib/swiper3.1.0.min.css">
+    <link rel="stylesheet" href="../css/sjfw.css">
+</head>
+
+<body>
+    <div class="top-header clearfix">
+        <div class="w">
+            <a href="/">
+                <span class="logo"></span>
+                <span class="logo-name">顺鑫绿洲</span>
+            </a>
+
+            <ul class="top-navs">
+                <li class="nav-item active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./xwzx.html">新闻中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./project">工程案例</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./sjfw.html">设计服务</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./whzx.html">文化中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./文化中心.html">人才中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w">
+        <div class="main">
+            <div class="main-inner">
+                <div class="words animated fadeInDown">
+                    <span class="en">YOU ARE WELCOME TO WORK WITH US</span>
+                    <span class="cn">欢迎您与我们进行项目合作</span>
+                </div>
+                <a href="#" class="sub-btn animated fadeInUp" id="js-dialog-btn">在线提交需求</a>
+                <div class="text-mask"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="dialog-container" id="js-project-dialog">
+        <div class="dialog-content">
+            <p class="dialog-name">填写您的项目需求</p>
+            <form action="" class="iform">
+                <div class="row require">
+                    <label for="">项目名称</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="project-name"><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="">设计类别</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="design-type">
+                    </div>
+                </div>
+                <div class="row require">
+                    <label for="">项目地点</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="project-address"><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="">单位名称</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="comp-name">
+                    </div>
+                </div>
+                <div class="row require">
+                    <label for="">联系人</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="contact"><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row require">
+                    <label for="">电话</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="tell"><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row require">
+                    <label for="">Email</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="email"><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="">网址</label>
+                    <div class="ctrl">
+                        <input type="text" class="ipt" name="url">
+                    </div>
+                </div>
+                <div class="row require">
+                    <label for="">简单描述</label>
+                    <div class="ctrl">
+                        <textarea type="text" class="ipt" name="desc"></textarea><i class="state-icon">*</i>
+                    </div>
+                </div>
+                <div class="row align-center">
+                    <a href="#" class="sub-btn" id="js-sub">在线提交需求</a>
+                </div>
+            </form>
+            <div class="dialog-close">x</div>
+        </div>
+    </div>
+    <div class="common-foot align-center">
+        <p class="copy-info">Copyright 2014 顺鑫绿洲 All Rights Reserved  京ICP备12040664号 京公网安备110113000279号</p>
+    </div>
+</body>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/swiper3.1.0.min.js"></script>
+<script>
+(function(){
+    var $dialog = $('#js-project-dialog'),
+        $open = $('#js-dialog-btn'),
+        $sub = $('#js-sub'),
+        $form = $('.iform');
+
+    function checkForm(){
+        var valid = true;
+
+        $form.find('.has-error').removeClass('has-error');
+
+        $form.find('.ipt').each(function(){
+            var $p = $(this).parents('.row'),
+                val = $.trim($(this).val());
+
+            if($p.is('.require') && !val){
+                $p.addClass('has-error');
+                valid = false;
+            }
+        });
+
+        $form.find('.has-error:first .ipt').focus();
+
+        return valid;
+    }
+
+    function showDialog(){
+        $dialog.show().addClass('animated bunceIn')
+    }
+
+    function hideDialog(){
+        $dialog.hide().removeClass('animated bunceIn');
+    }
+
+    function handleSubmit(){
+        var data = null;
+
+        if(checkForm()){
+            data = $form.serialize();
+
+            console.log(data);
+
+            hideDialog();
+        }
+    }
+
+    $open.on('click', function(){
+        showDialog();
+        return false;
+    });
+
+    $sub.on('click', function(){
+        handleSubmit();
+        return false;
+    });
+
+    $dialog.find('.dialog-close').on('click', function(){
+        hideDialog();
+    })
+
+
+})();
+
+</script>
+</html>

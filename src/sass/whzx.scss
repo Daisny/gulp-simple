@@ -1,0 +1,169 @@
+@import './common.scss';
+
+.jobs{
+    font-size: 0;
+
+    .job-item{
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid #e5e5e5;
+        padding: 22px 18px 0;
+        width: percentage(380 / 1180);
+        height: 170px;
+        font-size: 14px;
+        color: #666;
+        margin-right: percentage(20 / 1180);
+        margin-bottom: percentage(20 / 1180);
+        box-shadow:-10px 0 24px 0 rgba(204,204,204,0.18);
+        transition: all .4s ease;
+
+        @media screen and (min-width: 611px){
+            &:nth-child(3n + 3){
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 610px){
+            width: 49%;
+            margin-right: 2%;
+            height: auto;
+            padding-bottom: 10px;
+
+            &:nth-child(even){
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (min-width: 415px){
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 414px){
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .title{
+            display: block;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .meta{
+            line-height: 16px;
+            margin-bottom: 10px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover{
+            border-color: $green;
+            color: $green;
+            transform: translate(0, -5px);
+            box-shadow:-10px 0 24px 0 rgba(204,204,204,0.28);
+        }
+    }
+}
+
+.job-dialog-container{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .6);
+
+    .dialog-box{
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: percentage(960 / 1332);
+        transform: translate(-50%, -50%);
+    }
+
+    .job-name{
+        display: block;
+        font-size: 22px;
+        margin-bottom: 32px;
+    }
+
+    .dialog-content{
+        box-sizing: border-box;
+        overflow: auto;
+        height: 100%;
+        padding: 32px 60px;
+        background-color: #fff;
+    }
+
+    .job-metas{
+        margin-bottom: 26px;
+    }
+
+    .job-email{
+        margin-top: 52px;
+    }
+
+    .dialog-close{
+        position: absolute;
+        font-size: 20px;
+        color: $green;
+        top: 25px;
+        right: 25px;
+    }
+
+    @media screen and (max-width: 768px){
+        .dialog-content{
+            padding: 20px;
+        }
+        .dialog-close{
+            top: 20px;
+        }
+
+        .job-email{
+            margin-top: 20px;
+        }
+
+        .job-metas, .job-desc{
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 414px){
+        .dialog-box{
+            width: 100%;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+
+        .dialog-content{
+            padding: 10px;
+        }
+
+        .dialog-close{
+            top: 10px;
+        }
+
+        .job-metas, .job-desc{
+            line-height: 24px;
+            font-size: 12px;
+        }
+
+        .job-name{
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+}
+
+.job-metas, .job-desc{
+    font-size: 16px;
+    color: #555;
+    line-height: 28px;
+}

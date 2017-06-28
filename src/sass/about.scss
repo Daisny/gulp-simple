@@ -1,0 +1,80 @@
+@import './common.scss';
+
+.address-map{
+    height: 421px;
+    margin-bottom: 50px;
+}
+
+.address-box, .map-box{
+    box-sizing: border-box;
+}
+
+.address-box{
+    width: 341px;
+    height: 100%;
+    padding-left: 30px;
+    overflow: hidden;
+    background: url(../image/wenli6.png) repeat center 0;
+
+    .head{
+        padding-top: 32px;
+
+        .icon{
+            display: inline-block;
+            margin-bottom: 29px;
+            width: 39px;
+            height: 48px;
+            background: url(../image/chatbox.png) no-repeat center;
+            background-size: cover;
+        }
+    }
+
+    .meta{
+        line-height: 36px;
+
+        >span{
+            color: $green;
+        }
+    }
+}
+
+.map-box{
+    margin-left: 341 + 20px;
+    height: 419px;
+    background: url(../image/map.png) no-repeat center 0;
+    background-size: cover;
+}
+
+@media screen and (max-width: 610px){
+    .address-map{
+        height: auto;
+    }
+
+    .address-box{
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+
+        .head{
+            padding-top: 10px;
+
+            .icon{
+                margin-bottom: 10px;
+                width: 29px;
+                height: (29 / 39) * 48px;
+            }
+        }
+
+        .meta{
+            line-height: 26px;
+        }
+    }
+
+    .map-box{
+        margin-left: 0;
+        height: 0;
+        padding-top: percentage(419 / 1180);
+    }
+}

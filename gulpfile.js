@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	path = require('path'),
 	sass= require('gulp-sass'),
+	less= require('gulp-less'),
 	plumber = require('gulp-plumber'),
 	rename = require('gulp-rename'),
 	del = require('del'),
@@ -35,10 +36,11 @@ var type = process.argv[2] || 'dev';
 gulp.task('sass', function(){
 	return gulp.src(path.join(src, 'sass/*.scss'))
 		.pipe(plumber())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browser: '[last 10 version]'
 		}))
-		.pipe(sass().on('error', sass.logError))
+
 		.pipe(gulp.dest(path.join(src, './css')))
 /*		.pipe(livereload());*/
 });
@@ -52,7 +54,11 @@ gulp.task('rev', ['rev-css', 'rev-js']);
 
 gulp.task('replace', function(){
 	gulp.src(['./rev/**/*.json', path.join(src, 'index.html')])
-		.pipe(revCollector())
+		.pipe(revCollector({
+			dirReplacements: {
+				"./css": 'http://cdn.2.com'
+			}
+		}))
 		.pipe(gulp.dest(buildPath))
 		.on('end', function(){
 			del('./rev/**')
@@ -72,7 +78,7 @@ gulp.task('rev-css', function(){
 		}))
 		.pipe(gulp.dest('./rev/css'))
 		.on('end', function(){
-			
+
 		});
 });
 

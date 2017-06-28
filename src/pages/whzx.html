@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>文化中心</title>
+    <link rel="stylesheet" href="../lib/swiper3.1.0.min.css">
+    <link rel="stylesheet" href="../css/whzx.css">
+</head>
+
+<body>
+    <div class="top-header clearfix">
+        <div class="w">
+            <a href="/">
+                <span class="logo"></span>
+                <span class="logo-name">顺鑫绿洲</span>
+            </a>
+
+            <ul class="top-navs">
+                <li class="nav-item active">
+                    <a href="/">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./xwzx.html">新闻中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./project">工程案例</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./sjfw.html">设计服务</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./whzx.html">文化中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./文化中心.html">人才中心</a>
+                </li>
+                <li class="nav-item">
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w">
+        <div class="sub-banner">
+            <img src="../image/subbanner5.png" alt="" class="media">
+            <div class="banner-desc">
+                <span class="icon"></span>
+                <span class="name">文化中心</span>
+            </div>
+            <div class="text-mask"></div>
+        </div>
+        <div class="jobs">
+            <div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div><div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div><div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div><div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div><div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div><div class="job-item">
+                <span class="title">高级前端工程师</span>
+                <p class="meta">招聘人数: 2人</p>
+                <div class="meta">工作地点: 北京</div>
+                <p class="meta">所属部门: 技术部门</p>
+            </div>
+        </div>
+    </div>
+    <div class="job-dialog-container">
+        <div class="dialog-box">
+            <div class="dialog-content">
+                <span class="job-name">高级UI设计师</span>
+                <div class="job-metas">
+                    用人部门：成本预算部 <br>
+                    岗位名称：造价员<br>
+                    期望到岗时间：尽快 <br>
+                    学历要求：大专及以上<br>
+                    需求人数：2人 <br>
+                    专业要求：工程造价（市政、土建、园林）<br>
+                    工作经验要求：2年及以上<br>
+                    薪资标准：面议
+                </div>
+                <div class="job-desc">
+                    <span class="title">职位描述：</span><br>
+                    1.编制投标预算；2.编制项目成本；3.审核项目部上报的工程预算；<br>
+                    4.审核采购部、项目部所采购的价格；5.负责项目运行过程中的成本监管与考核；<br>
+                    6.编制审核项目部上报甲方的工程结算并参与结算工作；<br>
+                    7.审核项目部上报的对分包商的结算；<br>
+                    8.协办其他部门工作，完成上级交办的其他任务。
+                </div>
+                <p class="job-email">如您对我们的岗位感兴趣，请发送简历至邮箱：hr@s-hyland.com</p>
+            </div>
+            <span class="dialog-close">x</span>
+        </div>
+    </div>
+    <div class="common-foot align-center">
+        <p class="copy-info">Copyright 2014 顺鑫绿洲 All Rights Reserved  京ICP备12040664号 京公网安备110113000279号</p>
+    </div>
+</body>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/swiper3.1.0.min.js"></script>
+<script>
+    (function(){
+        var $dialog = $('.job-dialog-container');
+
+        $dialog.on('click', '.dialog-close', function(){
+            closeDialog();
+        });
+
+        $('.jobs').on('click', '.job-item', function(){
+            showDialog();
+        })
+
+        function showDialog(){
+            $dialog.show();
+        }
+
+        function closeDialog(){
+            $dialog.hide();
+        }
+    })();
+
+</script>
+</html>
